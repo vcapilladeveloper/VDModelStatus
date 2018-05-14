@@ -1,0 +1,11 @@
+framework module VDModelStatus {
+  umbrella header "VDModelStatus.h"
+
+  export *
+  module * { export * }
+}
+
+module VDModelStatus.Swift {
+    header "VDModelStatus-Swift.h"
+    requires objc
+}

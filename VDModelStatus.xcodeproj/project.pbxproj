@@ -10,6 +10,8 @@
 		675AC9CC20A82E2900D2D3AE /* VDModelStatus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675AC9C220A82E2900D2D3AE /* VDModelStatus.framework */; };
 		675AC9D120A82E2900D2D3AE /* VDModelStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675AC9D020A82E2900D2D3AE /* VDModelStatusTests.swift */; };
 		675AC9D320A82E2900D2D3AE /* VDModelStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = 675AC9C520A82E2900D2D3AE /* VDModelStatus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		675AC9DD20A82E8900D2D3AE /* VDModelStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675AC9DC20A82E8900D2D3AE /* VDModelStatusView.swift */; };
+		675AC9DF20A82EB400D2D3AE /* VDModelStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 675AC9DE20A82EB400D2D3AE /* VDModelStatusView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		675AC9CB20A82E2900D2D3AE /* VDModelStatusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VDModelStatusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		675AC9D020A82E2900D2D3AE /* VDModelStatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VDModelStatusTests.swift; sourceTree = "<group>"; };
 		675AC9D220A82E2900D2D3AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		675AC9DC20A82E8900D2D3AE /* VDModelStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VDModelStatusView.swift; sourceTree = "<group>"; };
+		675AC9DE20A82EB400D2D3AE /* VDModelStatusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VDModelStatusView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				675AC9C520A82E2900D2D3AE /* VDModelStatus.h */,
 				675AC9C620A82E2900D2D3AE /* Info.plist */,
+				675AC9DC20A82E8900D2D3AE /* VDModelStatusView.swift */,
+				675AC9DE20A82EB400D2D3AE /* VDModelStatusView.xib */,
 			);
 			path = VDModelStatus;
 			sourceTree = "<group>";
@@ -148,6 +154,7 @@
 				TargetAttributes = {
 					675AC9C120A82E2900D2D3AE = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 0930;
 					};
 					675AC9CA20A82E2900D2D3AE = {
 						CreatedOnToolsVersion = 9.3.1;
@@ -177,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				675AC9DF20A82EB400D2D3AE /* VDModelStatusView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				675AC9DD20A82E8900D2D3AE /* VDModelStatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +348,7 @@
 		675AC9D720A82E2900D2D3AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -356,6 +366,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vcapilla.VDModelStatus;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +375,7 @@
 		675AC9D820A82E2900D2D3AE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -389,6 +401,7 @@
 		675AC9DA20A82E2900D2D3AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N7AZRND92Z;
 				INFOPLIST_FILE = VDModelStatusTests/Info.plist;
@@ -407,6 +420,7 @@
 		675AC9DB20A82E2900D2D3AE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N7AZRND92Z;
 				INFOPLIST_FILE = VDModelStatusTests/Info.plist;
