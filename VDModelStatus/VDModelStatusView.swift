@@ -16,6 +16,7 @@ public class VDModelStatusView: UIView {
     
     let nibName = "VDModelStatusView"
     var contentView: UIView!
+    var timer: Timer?
     
     // MARK: Set up View
     
@@ -29,7 +30,7 @@ public class VDModelStatusView: UIView {
         // For use in Interface Builder
         super.init(coder: aDecoder)
         setUpView()
-    } 
+    }
     
     private func setUpView() {
         // Set variable contentView to be view isnide XIB file. For these, access to de Bundle for this framework (self), the NIB and finaly the view inside NIB.
@@ -65,12 +66,34 @@ public class VDModelStatusView: UIView {
         self.subtitleLabel.text = text
     }
     
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    // Allow view to control itself
+    public override func layoutSubviews() {
+        // Rounded corners
+        self.layoutIfNeeded()
+        self.contentView.layer.masksToBounds = true
+        self.contentView.clipsToBounds = true
+        self.contentView.layer.cornerRadius = 10
     }
-    */
-
+    
+    public override func didMoveToSuperview() {
+        // Fade in when added to superview
+        // Then add a timer to remove the view
+        self.contentView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        UIView.animate(withDuration: 0.15, animations: {
+            self.contentView.alpha = 1.0
+            self.contentView.transform = CGAffineTransform.identity
+        }) { _ in
+            self.timer = Timer.scheduledTimer(timeInterval: TimeInterval(3.0), target: self, selector: #selector(self.removeSelf), userInfo: nil, repeats: false)
+        }
+    }
+    
+    @objc private func removeSelf() {
+        // Animate removal of view
+        UIView.animate(withDuration: 0.15, animations: {
+            self.contentView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            self.contentView.alpha = 0.0
+        }) { _ in
+            self.removeFromSuperview()
+        }
+    }
 }
