@@ -29,7 +29,7 @@ public class VDModelStatusView: UIView {
         // For use in Interface Builder
         super.init(coder: aDecoder)
         setUpView()
-    }
+    } 
     
     private func setUpView() {
         // Set variable contentView to be view isnide XIB file. For these, access to de Bundle for this framework (self), the NIB and finaly the view inside NIB.
